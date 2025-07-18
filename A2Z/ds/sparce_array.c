@@ -3,9 +3,15 @@
 sparce_convert(int mat[][]){
 	size_t rows = sizeof(mat) / sizeof(mat[0]);
 	size_t cols = sizeof(mat) / sizeof(mat[0][0]);
-
 	
-
+	int i,j;
+	for(i = 0; i < rows; i++){
+		for(j = 0; j < cols; j++){
+			if(mat[i][j] == 0){
+				
+			}	
+		}
+	}|
 }
 
 int main(){
