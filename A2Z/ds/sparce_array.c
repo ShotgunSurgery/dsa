@@ -1,36 +1,46 @@
-#include<stdio.h>
+#include <stdio.h>
 
-sparce_convert(int mat[][]){
-	size_t rows = sizeof(mat) / sizeof(mat[0]);
-	size_t cols = sizeof(mat) / sizeof(mat[0][0]);
-	
-	int i,j;
-	for(i = 0; i < rows; i++){
-		for(j = 0; j < cols; j++){
-			if(mat[i][j] == 0){
-				
-			}	
-		}
-	}|
+int main() {
+    int i, j, k = 0;
+
+    int sparse_array[4][4] = {
+        {1, 0, 0, 0},
+        {0, 0, 4, 0},
+        {0, 9, 0, 0},
+        {0, 0, 0, 0}
+    };
+
+    int rows = 4, cols = 4;
+    int non_zero_count = 0;
+
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            if (sparse_array[i][j] != 0) {
+                non_zero_count++;
+            }
+        }
+    }
+
+    int coord_form[non_zero_count][3];
+
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < cols; j++) {
+            if (sparse_array[i][j] != 0) {
+                coord_form[k][0] = i;
+                coord_form[k][1] = j;
+                coord_form[k][2] = sparse_array[i][j];
+                k++;
+            }
+        }
+    }
+
+    printf("Row Col Value\n");
+    for (i = 0; i < non_zero_count; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%d ", coord_form[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
 }
-
-int main(){
-	int mat[3][3] = { 
-		{1,0,0},
-		{0,0,3},
-		{0,5,0},
-	};
-
-
-	printf("The original array is: \n");
-	for(int i = 0; i < 3; i++){
-		for(int j = 0; j < 3; j++){
-			printf("%d ", mat[i][j]);
-		}
-		printf("\n");
-	}
-
-	printf("Converting to sparce array");
-	sparce_convert(int* mat); 
-}
-

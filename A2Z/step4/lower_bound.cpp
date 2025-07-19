@@ -1,22 +1,24 @@
+#include <stdio>
 #include <iostream>
-using namespace std;
 
 class Solution{
-public:
-	int lowerBound(vector<int> &nums, int x){
-		int lower = 0, higher = nums.size() - 1, mid = (lower + higher)/2;
-		while(lower != higher){
-			if(nums[x] == nums[mid]){}
-			else if(nums[x] > nums[mid]){}
-			else{}
-			
+	public:
+		int lowerBound(vector<int> nums, int x){
+			int low = 0, high = nums.size(),ans = 0;
+			while(low < high){
+				mid = low + (high - low)/2;
+				if(nums[mid] >= x){
+					ans = mid;
+					high = mid;
+				}
+				else{
+					low = mid + 1;
+				}
+			}
+		return ans;
 		}
-	}
 }
 
 int main(){
-	vector<int> v = {1,2,2,3};
-	int x = 2;
-	cout<<"Index"<<lowerBound(v, x)<<"is the smallest index such that"<<v[lowerBound(v, x)] >= x;
-
+	vector<int>  = 
 }
