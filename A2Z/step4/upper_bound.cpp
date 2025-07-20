@@ -34,4 +34,3 @@ int main(){
 	int target = 2;
 	cout<<"Index: "<<s.upperBound(v, target); 
 }
-
