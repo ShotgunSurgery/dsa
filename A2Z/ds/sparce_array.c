@@ -1,3 +1,4 @@
+// Two representation methods -> 1. 2. 
 #include <stdio.h>
 
 int main() {
@@ -21,7 +22,10 @@ int main() {
         }
     }
 
-    int coord_form[non_zero_count][3];
+    int** coord_form = (int**)malloc(non_zero_count * sizeof(int*));
+    for(i = 0; i < non_zero_count; i++){
+        coord_form[i] = (int*)malloc(3 * sizeof(int));
+    }
 
     for (i = 0; i < rows; i++) {
         for (j = 0; j < cols; j++) {
