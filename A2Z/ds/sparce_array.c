@@ -1,4 +1,4 @@
-// Two representation methods -> 1. 2. 
+// Two representation methods -> 1. Compressed Sparse Row (CSR formate) 2. Cordinate List (COO formate) 
 #include <stdio.h>
 
 int main() {
@@ -15,7 +15,7 @@ int main() {
     int non_zero_count = 0;
 
     for (i = 0; i < rows; i++) {
-        for (j = 0; j < cols; j++) {
+        for (j = 0; j < cols; j++) {    
             if (sparse_array[i][j] != 0) {
                 non_zero_count++;
             }
@@ -45,6 +45,11 @@ int main() {
         }
         printf("\n");
     }
+
+    // lu -> formate specifier for long unsigned integer 
+    printf("%lu bytes of memory occupied by original array. \n", sizeof(sparse_array));
+    // below we will print the size of the pointers themselve and not the size of the memory allocated by the pointers 
+    printf("%lu bytes of memory occupied by sparce representation. \n", sizeof(coord_form));
 
     return 0;
 }
