@@ -1,4 +1,7 @@
-// Two representation methods -> 1. Compressed Sparse Row (CSR formate) 2. Cordinate List (COO formate) 
+// Two representation methods -> 1. Compressed Sparse Row (CSR formate) 2. Cordinate List (COO formate)
+// COO formate -> 
+
+
 #include <stdio.h>
 
 int main() {
