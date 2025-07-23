@@ -7,26 +7,30 @@ class Solution
 {
 public:
     double findMaxAverage(vector<int> &nums, int k)
+{
+    int sum = 0;
+    for (int i = 0; i < k; i++)
+        sum += nums[i];
+
+    double avg = (double)sum / k;
+
+    for (int i = k; i < nums.size(); i++)
     {
-        int l = 0, avg = 0, sum = 0, new_avg;
-        while ((l + 4) < nums.size())
-        {
-            for (l; l < (l + 4); l++)
-            {
-                sum = sum + nums[l];
-            }
-            new_avg = sum / 4;
-            avg = (new_avg > avg) ? new_avg : avg;
-            l += 1;
-        }
-        return avg;
+        sum += nums[i] - nums[i - k];
+        double new_avg = (double)sum / k;
+        avg = max(avg, new_avg);
     }
+
+    return avg;
+}
+
 };
 
 int main()
 {
     Solution s;
-    vector<int> nums = {1, 12, -5, -6, 50, 3};
-    int target = 4;
+    vector<int> nums = {-1};
+    int target = 1;
+    
     cout << s.findMaxAverage(nums, target);
 }
