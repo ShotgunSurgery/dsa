@@ -13,15 +13,38 @@ void function(const vector<int> &input_array)
     {
         recorder[integer] += 1;
     }
-    for (int integer : recorder)
+    for (int integer : input_array)
     {
-        cout << integer;
+        cout<<recorder[integer]<<" ";
     }
 }
 
 int main()
 {
-    vector<int> input_array = {1, 2, 3, 4, 5};
-    function(input_array);
+    vector<vector<int>> main_array;
+
+    int T;
+    cin >> T;
+
+    // In a while loop any non-zero number is treated as true and zero is treated as false so
+    // also T first returns a value and then decrements so this is a shorthand in cpp to run loop T times
+    while (T--)
+    {
+        int N;
+        cin >> N;
+
+        vector<int> arr(N);
+
+        for(int i = 0; i < N; i++){
+            cin>>arr[i];
+        }
+
+        main_array.push_back(arr);
+    }
+
+    for(vector<int> v : main_array){
+        function(v);
+        cout<<endl;
+    }
     return 0;
 }
