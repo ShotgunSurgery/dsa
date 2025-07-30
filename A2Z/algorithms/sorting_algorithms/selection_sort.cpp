@@ -3,9 +3,10 @@
 using namespace std;
 
 vector<int> selection_sort(vector<int> arr, int n){
-    int smallest = 0;
+    
     for(int i = 0; i < n; i++){
-        for(int j = n - 1; j > 0; j--){
+        int smallest = i;
+        for(int j = i + 1; j < n; j++){
             if(arr[smallest] > arr[smallest + 1]) smallest = smallest + 1;
         }
         swap(arr[smallest], arr[i]);
