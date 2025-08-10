@@ -12,14 +12,18 @@ bool isBadVersion(int version) {
 class Solution {
 public:
     int firstBadVersion(int n) {
-        int left = 0, right = n - 1, temp; 
+        int left = 1, right = n, temp = 0; 
+        // cout << "left: " << left << " " << " right: " << right << " " << " mid: " << "-" << " " << " temp: " << temp << endl; 
         while(left <= right){
-            int mid = left + (left - right)/2;
+            int mid = left + (right - left)/2;
+            // cout << "left: " << left << " " << " right: " << right << " " << " mid: " << mid << " " << " temp: " << temp << endl;
             if(!isBadVersion(mid)) left = mid + 1;
             else if(isBadVersion(mid)) {
                 temp = mid;
-                right - mid - 1;
+                right = mid - 1;
             }
+            // cout << "left: " << left << " " << " right: " << right << " " << " mid: " << mid << " " << " temp: " << temp << endl;
+            // return -1;
         }
         return temp;
     }
