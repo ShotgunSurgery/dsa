@@ -1,0 +1,12 @@
+Debugging - 
+1. hand run
+2. print statements 
+3. variable table 
+
+Edge Case handling techniques - 
+1. early returns for special statements
+2. Adjusting boundaries 
+3. Normalizing Input
+4. Fallback Handling 
+5. Safe defaults
+6. Extra checks before critical operations 

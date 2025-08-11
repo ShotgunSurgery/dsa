@@ -16,9 +16,9 @@ public:
             if (nums[mid] == target)
                 return mid;
 
-            if (nums[lo] < nums[mid])
+            if (nums[lo] <= nums[mid])
             {
-                if (nums[lo] <= target && target < nums[mid - 1])
+                if (nums[lo] <= target && target < nums[mid])
                 {
                     // cout << "nums[lo]: " << nums[lo] << " " << " target: " << target << " " << " nums[mid]: " << nums[mid] << endl;
                     // cout << "check" << endl;
@@ -29,7 +29,7 @@ public:
                 }
             }
             else {
-                if(nums[mid + 1] < target && target <= nums[hi]){
+                if(nums[mid] < target && target <= nums[hi]){
                     lo = mid + 1;
                 }
                 else {
@@ -37,7 +37,7 @@ public:
                     hi = mid - 1;
                 }
             }
-            cout << "lo: " << lo << " " << " hi: " << hi << " " << " mid: " << mid << endl;
+            // cout << "lo: " << lo << " " << " hi: " << hi << " " << " mid: " << mid << endl;
         }
         return -1;
     }
