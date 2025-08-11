@@ -13,29 +13,37 @@ public:
         {
             int mid = lo + (hi - lo) / 2;
             // cout << "mid: " << mid << endl;
-            if(nums[lo] == nums[mid] && nums[mid] == nums[hi]){
-                while((nums[mid] == nums[lo] || nums[mid] == nums[hi]) && mid < nums.size() - 1){
-                    // cout << "mid: " << mid << endl;
-                    mid+=1;
-                }
-            }
+            // if(nums[lo] == nums[mid] && nums[mid] == nums[hi]){
+            //     while((nums[mid] == nums[lo] || nums[mid] == nums[hi]) && mid < nums.size() - 1){
+            //         // cout << "mid: " << mid << endl;
+            //         mid+=1;
+            //     }
+            // }
 
             // cout << "test" << mid;    
 
             //brute force approach 1 testing 
-            if(nums[lo] == nums[mid] && nums[mid] == nums[hi] && (nums.size() - 1) == mid){
-                // cout << "check";
-                mid = (0 + (nums.size() - 1)/2);
-                while((nums[mid] == nums[lo] || nums[mid] == nums[hi]) && mid >= 0){
+            // if(nums[lo] == nums[mid] && nums[mid] == nums[hi] && (nums.size() - 1) == mid){
+            //     // cout << "check";
+            //     mid = (0 + (nums.size() - 1)/2);
+            //     while((nums[mid] == nums[lo] || nums[mid] == nums[hi]) && mid >= 0){
                     
-                    mid-=1;
-                }
+            //         mid-=1;
+            //     }
+            // }
+
+            // optimized approach 1 testing 
+            if (nums[mid] == target)
+                return 1;
+            if(nums[lo] == nums[mid] && nums[mid] == nums[hi]){
+                ++lo;
+                --hi;
+                continue;   
             }
             // cout << mid << endl;
             // cout << "check";
             // cout << "lo: " << lo << " " << " hi: " << hi << " " << " mid: " << mid << endl;
-            if (nums[mid] == target)
-                return 1;
+            
 
             if (nums[lo] <= nums[mid])
             {
