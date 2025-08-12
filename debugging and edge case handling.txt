@@ -1,6 +1,8 @@
 Debugging - 
 1. hand run
 2. print statements 
+cout << "var1: " << var1 << " var2: " << var2 << endl;
+
 3. variable table 
 
 Edge Case handling techniques - 
