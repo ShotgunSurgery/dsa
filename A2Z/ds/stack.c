@@ -34,6 +34,7 @@ void push(Stack* stack, int n){
     printf("Pushed %d onto the stack\n", n);
 }
 
+// In Cpp it's top(), in Java/Python it's peek();
 int peek(Stack* stack){
     if(ifEmpty(stack)){
         printf("Stack is Empty\n");
@@ -42,6 +43,7 @@ int peek(Stack* stack){
     return stack->arr[stack->top];
 }
 
+// In cpp pop() function only deletes the element from the memory unlike Java/Python where it also returns it 
 int pop(Stack* stack){
     if(ifEmpty(stack)){
         printf("Stack Underflow\n");
