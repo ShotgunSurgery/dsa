@@ -67,7 +67,7 @@ int main()
     cin >> n;
     vector<string> arr;
     Solution s;
-    // string expression = "a+b*c";
+    string expression = "a+b*c";
     for (i = 0; i < n; i++)
     {
         string x;

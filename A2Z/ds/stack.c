@@ -57,7 +57,7 @@ char* infix_to_postfix(char* arr, Stack* stack){
         char ch = arr[i];
         if(isdigit(ch)){
             // ascii value of 0 is 48, 1 is 49 and so on hence the following 
-            push(&stack, ch - '0');
+            push(stack, ch - '0');
         }
         else if(ch == ' '){
             continue;
