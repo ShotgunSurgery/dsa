@@ -4,44 +4,30 @@
 using namespace std;
 
 class MinStack {
+private:
+    stack<int> s1;
+    stack<int> s2;
 public:
-
-    stack<int> s;
-    stack<int> dummy;
-    int i = 0, min;
-
     MinStack() {
         
     }
     
     void push(int val) {
-        if(i == 0){
-            min = val;
-            i++;
-        }
-        if(val <= min){
-            min = val;
-            dummy.push(val);
-        }
-        
-        if(s.empty()) i--;
-        s.push(val);    
+        s1.push(val);
+        if(s2.empty() || val <= getMin()) s2.push(val);
     }
     
     void pop() {
-        if(s.top() == dummy.top()) dummy.pop();
-        s.pop();
-        if(s.empty()) i--;
+        if(s2.top() == s1.top()) s2.pop();
+        s1.pop();
     }
     
     int top() {
-        return s.top();
-        if(s.empty()) i--;
+        return s1.top();
     }
     
     int getMin() {
-        return dummy.top();
-        if(s.empty()) i--;
+        return s2.top();        
     }
 };
 
@@ -53,8 +39,3 @@ public:
  * int param_3 = obj->top();
  * int param_4 = obj->getMin();
  */
-
-int main(){
-    MinStack m;
-    
-}
