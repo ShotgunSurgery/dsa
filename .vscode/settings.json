@@ -8,6 +8,7 @@
         "list": "cpp",
         "xhash": "cpp",
         "stack": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "unordered_map": "cpp"
     }
 }
