@@ -71,6 +71,8 @@ int main()
 
     printf("Dequeued element: %d\n", dequeue());
     display();
+    enqueue(40);
+    display();
 
     return 0;
 }
